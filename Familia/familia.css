@@ -1,0 +1,138 @@
+*{
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* MY SITE */
+.mysite{
+  color: #fff;
+  text-decoration: none;
+  position:relative; }
+      
+  .mysite:hover{
+  color: #fff;
+    }
+      
+  .mysite:after{
+      content: "";
+      background-color: rgb(56,56,179);
+      width: 0;
+      height: 3px;
+      left: 0;
+      bottom: -1px;
+      position: absolute;
+      transition: 0.9s;
+      }
+      
+  .mysite:hover:after{
+      width: 100%;
+      }
+  
+  /* ACADEMICO */
+  .academico{
+  color: #fff;
+  text-decoration: none;
+  position:relative; }
+      
+  .academico:hover{
+  color: #fff;
+    }
+      
+      
+  .academico:after{
+  content: "";
+  background-color:  rgb(56,56,179);
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -1px;
+  position: absolute;
+  transition: 0.9s;
+  }
+      
+  .academico:hover:after{
+  width: 100%;
+  }
+  
+  /* FAMILIA */
+  .family{
+    color: #fff;
+    text-decoration: none;
+    position:relative; }
+        
+    .family:hover{
+    color: #fff;
+      }
+        
+        
+    .family:after{
+    content: "";
+    background-color: rgb(56,56,179);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -1px;
+    position: absolute;
+    transition: 0.9s;
+    }
+        
+    .family:hover:after{
+    width: 100%;
+    }
+  
+  /* AMIGOS */
+  .friends{
+    color: #fff;
+    text-decoration: none;
+    position:relative; }
+        
+    .friends:hover{
+    color: #fff;
+      }
+        
+        
+    .friends:after{
+    content: "";
+    background-color:  rgb(56,56,179);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -1px;
+    position: absolute;
+    transition: 0.9s;
+    }
+        
+    .friends:hover:after{
+    width: 100%;
+    }
+  
+  /* HOBBIE */
+  .hobbie{
+    color: #fff;
+    text-decoration: none;
+    position:relative; }
+        
+    .hobbie:hover{
+    color: #fff;
+      }
+        
+        
+    .hobbie:after{
+    content: "";
+    background-color:  rgb(56,56,179);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -1px;
+    position: absolute;
+    transition: 0.9s;
+    }
+        
+    .hobbie:hover:after{
+    width: 100%;
+    }
