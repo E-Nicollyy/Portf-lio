@@ -1,0 +1,5 @@
+ <!-- me-4: margin-end: 4; Adiciona uma margem à direita; Usado para afastar a 
+imagem do texto ao lado. -->
+ <!-- rounded: Aplica bordas arredondadas ao elemento (como cantos suaves) -->
+ <!--shadow: Adiciona uma sombra leve ao redor do elemento; Dá um toque visual de 
+profundidade, como se a imagem estivesse "acima" do    fundo -->

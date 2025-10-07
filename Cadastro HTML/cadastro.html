@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div class="fundo-principal">
+    <fieldset class="fundo">
+
+    <div class="campo"> 
+        <h1 id="titulo"> Cadastro de DEV  </h1>
+        <p id="subtitulo"> Complete suas informações</p>
+        <br>   
+    </div>
+
+    <form> 
+        <fieldset class="grupo"> 
+            <div class="campo">
+                
+            <label for="nome"><strong>Nome </strong> </label>
+            <input type="text" name="nome" id="nome" required>
+            </div>
+
+            <div class="campo"> 
+                <label for="Sobrenome"> <strong> Sobrenome </strong> </label>
+                <input type="password" name="Sobrenome" id="Sobrenome" required>
+             </div>
+
+
+        <div class="campo"> 
+            <label for="email"> <strong> Email </strong></label>
+            <input type="email" name="email" id="email" required>
+        </div>
+    </fieldset>
+
+        <div class="campo">
+            <label> <strong> De qual lado da aplicação você Desenvolve : </strong></label>
+            <label> 
+                <input type="radio" name="devweb" value="Front" > Front </label>
+                <label>
+                <input type="radio" name="devweb" value="Back" > Back </label>
+                <label> 
+                <input type="radio" name="devweb" value="FullStak" > FullStak </label> 
+
+        </div>
+
+        <div class="campo"> 
+            <label for="senioridade"> <strong> Senioridade</strong> </label>
+            <select id="Senioridade"> 
+                <option selected disabled value="">Selecione </option>
+                <option> Senior </option>
+                <option> Pleno </option>
+                <option> Junior </option>
+            </select>
+        </div> <br> 
+
+        <fieldset class="grupo">
+
+            <div id="check"> 
+            <label> <strong> Quais tecnologias você utiliza : </strong></label> <br> <br>
+            <input type="checkbox" id="tecnoligia1" name="tecnoligia1" value="HTML" >
+            <label for="tecnoligia1"> HTML </label>
+            <input type="checkbox" id="tecnoligia2" name="tecnoligia2" value="CSS" >
+            <label for="tecnoligia2"> CSS </label>
+            <input type="checkbox" id="tecnoligia3" name="tecnoligia3" value="PHP" >
+            <label for="tecnoligia3"> PHP </label>
+            <input type="checkbox" id="tecnoligia4" name="tecnoligia4" value="C#" >
+            <label for="tecnoligia4"> C# </label>
+            <input type="checkbox" id="tecnoligia5" name="tecnoligia5" value="python" >
+            <label for="tecnoligia5"> python </label>
+            <input type="checkbox" id="tecnoligia6" name="tecnoligia6" value="JavaScript" >
+            <label for="tecnoligia6"> JavaScript </label>
+            <input type="checkbox" id="tecnoligia7" name="tecnoligia7" value="Java" >
+            <label for="tecnoligia7"> Java </label>
+        </fieldset>
+
+        <div class="campo">
+            <br>
+            <label for="experiencia"> <strong> Um pouco da sua experiência: </strong>  </label> <br>
+            <textarea rows="6" style="width: 25em" id="experiencia" name="experiencia"> </textarea>
+        </div> <br> 
+
+        <button class="botao" type="submit" onsubmit=""> Enviar </button>
+    </form>
+    </fieldset>
+</div>
+</body>
+
+
+</html>
