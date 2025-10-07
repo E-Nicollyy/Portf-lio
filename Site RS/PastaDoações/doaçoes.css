@@ -1,0 +1,349 @@
+/*importando fontes do google*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=DM+Serif+Text:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=DM+Serif+Text:ital@0;1&family=Kalnia+Glaze:wght@100..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=DM+Serif+Text:ital@0;1&family=Kalnia+Glaze&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Scribble&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*Colocando menu no topo */
+*{
+    margin: 0 auto;
+  }
+
+  /* PAI das listas(MENU) */
+  ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    font-size: 20px;
+    height: 70px;
+    background-color: black;
+   
+  }
+  /*ID MENU */
+    #menu {
+    width: 100%;
+    height: 80%;
+    font-family: "Open Sans", sans-serif;
+    position: fixed;    
+  }
+
+  /*Arrumando e estilazando a fonte do Menu */
+  .ajudars{
+    display: inline;
+    padding-right: 69%;
+    font-family: "Open Sans", sans-serif;
+    color: aliceblue;
+  }
+
+  /*MENU SOS AJUDA RS*/
+  .ajudars:hover{
+    color: aqua;
+    cursor: pointer;
+  }
+
+  /* estilizando os links que nao foi declarado classe*/
+  a {
+    color: #fff;
+    text-decoration: none;
+    position:relative;
+  }
+
+  /* ação ao passar o cursor do mouse nos links */
+  a:hover{
+  color: aqua;
+  }
+  
+
+  /*posicinando a imagem */
+  .sub{
+    padding-top: 3%;
+    padding-left:10%;
+    padding-right: 10%;
+    flex-direction: row;
+    display: inline;
+    justify-content: space-around;
+  }
+  
+  /*Começando colocar animação ao passar o cursor do mouse no MENU */ 
+  .inicio:after{
+    content: "";
+    background-color: red;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+    position: absolute;
+    transition: 0.9s;
+  
+  }
+
+  /*Menu INICIO**/
+  .inicio:hover:after{
+    width: 100%;
+  }
+  
+  /*MENU SOS*/
+  .sos:after{
+    content: "";
+    background-color: red;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+    position: absolute;
+    transition: 0.9s;
+  
+  }
+
+  /*MENU SOS AÇÂO*/
+  .sos:hover:after{
+    width: 100%;
+  }
+  
+  /*MENU DOAÇÔES*/ 
+  .doacoes:after{
+    content: "";
+    background-color: red;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+    position: absolute;
+    transition: 0.9s;
+  
+  }
+
+  /*MENU DOAÇÔES AÇÂO*/
+  .doacoes:hover:after{
+    width: 100%;
+  }
+
+/*MENU SOBRE*/
+  .sobre:after{
+    content: "";
+    background-color: red;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+    position: absolute;
+    transition: 0.9s;
+  
+  }
+  
+  
+  /* MENU SOBRE AÇÂO*/
+  .sobre:hover:after{
+    width: 100%;
+  }
+
+
+  /* estilizando e posicionando o primeiro paragrafo da pagina*/
+ .primeiro_paragrafo{
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: 'Poppins', serif;
+  font-size: 18px;
+ }
+
+
+ /*Organizando e posicionando footer */
+ footer{
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  margin-top: auto;
+  background-color:  black;
+
+}
+
+
+/*deixando todos fieldset presentes no html invisiveis */
+fieldset{
+  border: 0;
+  margin: 0;
+
+  
+}
+
+
+/* estilizando e posicionando o titulo principal da página*/ 
+.titulo{
+  justify-content: center;
+  align-items: center;
+  padding-left: 12%;
+  padding-right: 12%;
+  font-family: 'Poppins', serif;
+  padding-top: 8%;
+  font-size: 42px;
+  color: black;
+}
+
+
+/* Tirando as varias linhas da tabela ao todo tr- nova linha*/
+table, td, th,tr{
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 40px;
+}
+
+
+/* estilizando coisaas especificas por partes da tabela cabeçalho*/ 
+th{
+  color: #fff;
+  font-family: 'Poppins', serif;
+  background-color: rgb(25, 25, 80);
+  font-size: 30px;
+}
+
+/* definir as celulas que contem os dados da tabela */
+td{
+  background-color: #fff;
+  font-size: 30px;
+  color: black;
+  font-family: 'Poppins', serif;
+
+}
+
+.tabela{
+padding-top: 80%;
+padding-left: 30%;
+padding-right: 30%;
+}
+
+.tabela_valores{
+  transform: translateY(-260%);
+padding-left: 40%;
+}
+
+
+/* posicionando texto abaixo de uma das imagens*/
+.titulo_doacoes{
+  padding-left: 10%;
+}
+
+/*posicionando os elementos clicaveis no footer*/
+.elementos{
+  padding: 20px;
+  display: inline;
+  justify-content: space-between;
+  letter-spacing: 10px; 
+  padding-left: 50% ;
+  padding-right: 40%;
+}
+
+
+
+/* Posicionando e estilizando o titulo do paragrafo da doação */
+.titulo_pix{
+  justify-content: center;
+  align-items: center;
+  padding-left: 12%;
+  padding-right: 12%;
+  font-family: 'Poppins', serif;
+  padding-top: 5%;
+  font-size: 38px;
+  color: aliceblue;
+}
+
+/* posicionando a imagem do qrcode*/
+.pix{
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  padding-left: 15%;
+  padding-right: 30%;
+}
+
+/* Posicionando e estilizando a descrição do qrcode */ 
+.titulo_qrcode{
+  font-size: 18px;
+  font-family: 'Poppins', serif;
+  color: aliceblue;
+  padding-left: 13%;
+
+}
+
+/* pintar o fundo da parte do qrcode*/
+.fundo_pix{
+  background-color: green;
+  width: 100vw;
+}
+
+.titulo_o_que_doar{
+  justify-content: center;
+  align-items: center;
+  padding-left: 12%;
+  padding-right: 12%;
+  font-family: 'Poppins', serif;
+  padding-top: 5%;
+  font-size: 38px;
+  color: black;}
+
+  .paragrafo_doar{
+    justify-content: center;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Poppins', serif;
+    font-size: 18px;
+  }
+
+  .footer_bbm{
+  
+    font-family: 'Poppins', serif;
+    font-size: 12px;
+  }
+
+  .tituloRS{
+    font-family: 'Poppins', serif;
+    font-size: 12px;
+  }
+
+  /*estilizando o texto do footer */
+.footerRS{
+  color: #fff;
+  padding-left: 80%;
+  transform:translateY(30%);
+
+}
+
+.bbm{
+  transform:translateY(-30%);
+  color: #fff;
+  padding-right: 5%;
+  margin-top: auto;
+}
+
+.sp{
+  text-align: center;
+  justify-content: center;
+  transform:translateY(-150%);
+}
+
+.paragrafo_ponto_coleta{
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: 'Poppins', serif;
+  font-size: 18px;
+}
+
+.ponto_coleta{
+  justify-content: center;
+  align-items: center;
+  padding-left: 12%;
+  padding-right: 12%;
+  font-family: 'Poppins', serif;
+  padding-top: 5%;
+  font-size: 38px;
+  color: black;}
