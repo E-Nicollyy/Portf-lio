@@ -147,3 +147,20 @@ a{
     .hobbie:hover:after{
     width: 100%;
     }
+
+#hover.teste{
+      transform: 8s;
+
+}
+#hover.teste:hover{
+  transform: translateY(5px);
+}
+
+
+.card{
+ transition: 2s;
+}
+
+.card:hover{
+  transform: translateY(-10px);
+}
