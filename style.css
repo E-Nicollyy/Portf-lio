@@ -1,0 +1,180 @@
+*{
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.primeiro{
+  width: 700px; /* Define um tamanho pequeno fixo */
+  height: 360px; /* Mantém a proporção circular */
+  border-radius: 50%;
+}
+
+/* MY SITE */
+.mysite{
+color: #fff;
+text-decoration: none;
+position:relative; }
+    
+.mysite:hover{
+color: #fff;
+  }
+    
+.mysite:after{
+    content: "";
+    background-color:  rgb(100, 28, 100);
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -1px;
+    position: absolute;
+    transition: 0.9s;
+    }
+    
+.mysite:hover:after{
+    width: 100%;
+    }
+
+/* ACADEMICO */
+.academico{
+color: #fff;
+text-decoration: none;
+position:relative; }
+    
+.academico:hover{
+color: #fff;
+  }
+    
+    
+.academico:after{
+content: "";
+background-color:  rgb(100, 28, 100);
+width: 0;
+height: 3px;
+left: 0;
+bottom: -1px;
+position: absolute;
+transition: 0.9s;
+}
+    
+.academico:hover:after{
+width: 100%;
+}
+
+/* FAMILIA */
+.family{
+  color: #fff;
+  text-decoration: none;
+  position:relative; }
+      
+  .family:hover{
+  color: #fff;
+    }
+      
+      
+  .family:after{
+  content: "";
+  background-color:  rgb(100, 28, 100);
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -1px;
+  position: absolute;
+  transition: 0.9s;
+  }
+      
+  .family:hover:after{
+  width: 100%;
+  }
+
+/* AMIGOS */
+.friends{
+  color: #fff;
+  text-decoration: none;
+  position:relative; }
+      
+  .friends:hover{
+  color: #fff;
+    }
+      
+      
+  .friends:after{
+  content: "";
+  background-color:  rgb(100, 28, 100);
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -1px;
+  position: absolute;
+  transition: 0.9s;
+  }
+      
+  .friends:hover:after{
+  width: 100%;
+  }
+
+/* HOBBIE */
+.hobbie{
+  color: #fff;
+  text-decoration: none;
+  position:relative; }
+      
+  .hobbie:hover{
+  color: #fff;
+    }
+      
+      
+  .hobbie:after{
+  content: "";
+  background-color:  rgb(100, 28, 100);
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -1px;
+  position: absolute;
+  transition: 0.9s;
+  }
+      
+  .hobbie:hover:after{
+  width: 100%;
+  }
+
+footer{
+    margin-top: -35px; /* Ajuste esse valor conforme necessário */
+
+  }
+
+
+.shadow-pro {
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.03); /* quase invisível */
+    backdrop-filter: blur(4px); /* efeito glass suave */
+    box-shadow: 0 0 10px rgba(0,0,0,0.18);
+    transition: .3s ease;
+}
+
+.shadow-pro:hover {
+    background: rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 0 20px rgba(255,255,255,0.25);
+}
+
+
+.foto {
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    transition: .7s ease;
+}
+
+.foto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 12px rgba(255,255,255,0.25);
+}
+
+.conteudo:hover{
+  transform: translateY(-8px);
+  transition: 0.9s;
+}
