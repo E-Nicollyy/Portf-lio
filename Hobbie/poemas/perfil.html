@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Publicações</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" href="../images/envelope.png">
+  <link rel="stylesheet" href="perfil.css">
+</head>
+
+<body class="" style="background-color:  #6f42c1; color: white;">
+
+<header id="header-fixo" class="bg-dark text-white d-flex align-items-center px-3 fixed-header">
+  <nav class="navbar navbar-dark bg-black fixed-top">
+    <div class="">
+      <a href="../poemas/poemas.html">
+        <img class="px-5" src="../images/casa1.png" style="padding-right: 700px">
+      </a>
+
+      <button class="cadastro btn btn-outline-ligh" data-bs-toggle="modal" data-bs-target="#modalCadastro">
+       <a class="cadastro nav-link text-white" href="#"> Cadastro </a>
+      </button>
+      
+
+      <button class="login btn btn-outline-ligh">
+        <a class="login nav-link text-white" href="./perfil.html">Login</a>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+<!-- Barra de usuário logado (logo abaixo do header fixo) -->
+<nav id="barra-usuario" class="navbar bg-black text-white 
+fixed-header" style="top: 60px;"></nav>>
+  <div class="container-fluid d-flex justify-content-between 
+align-items-center bg-dark ">
+    <span>
+      Logado como: <strong id="usuario-nome"></strong>
+    </span>
+    <button class="btn btn-warning btn-sm" onclick="trocarUsuario()
+">Trocar Usuário</button>
+  </div>
+</nav>
+
+
+<!-- Modal de Cadastro -->
+<div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastroLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCadastroLabel">Cadastrar Novo Usuário</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="nome-cadastro" class="form-control mb-3" placeholder="Nome de usuário">
+        <input type="password" id="senha-cadastro" class="form-control mb-3" placeholder="Senha">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" onclick="fazerCadastro()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Tela de login -->
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="w-100" style="max-width: 400px;">
+    <div class="rounded shadow p-4" id="login-container">
+      <h2 class="py-2 text-center">Bem-vindo(a)!</h2>
+      <p class="text-black">Digite seu nome para começar:</p>
+      <input type="text" id="nome-usuario" class="form-control mb-2" placeholder="Seu nome">
+      <input type="password" id="nome-senha" class="form-control mb-2" placeholder="Sua senha">
+      <button class="btn btn-primary w-100" onclick="fazerLogin()">Entrar</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Conteúdo principal do app -->
+<div class="container mt-4" id="app" style="display: none; transform: translateY(-640px); border: 1px solid black; ">
+  <h1 class="mb-4">Publicar Texto</h1>
+  <form id="form-publicar">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input type="text" id="titulo" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="conteudo" class="form-label">Conteúdo</label>
+      <textarea id="conteudo" class="form-control" rows="4" required></textarea>
+      <small id="contador" class="text-muted"></small>
+    </div>
+    <button type="submit" class="btn btn-dark" id="btn-publicar">Publicar</button>
+  </form>
+  <hr>
+  <h2>Publicações:</h2>
+  <div id="lista-publicacoes" class="mt-3"></div>
+</div>
+
+<!-- Scripts -->
+<script>
+// Cadastro de novo usuário
+function fazerCadastro() {
+  const nome = document.getElementById("nome-cadastro").value.trim().toLowerCase();
+  const senha = document.getElementById("senha-cadastro").value.trim();
+
+  if (!nome || !senha) {
+    alert("Preencha nome e senha para cadastrar!");
+    return;
+  }
+
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
+
+  if (usuarios[nome]) {
+    alert("Usuário já existe! Faça login.");
+    return;
+  }
+
+  usuarios[nome] = {
+    senha: senha,
+    publicacoes: []
+  };
+
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  alert("Cadastro realizado com sucesso!");
+
+  // Limpa campos e fecha o modal
+  document.getElementById("nome-cadastro").value = "";
+  document.getElementById("senha-cadastro").value = "";
+  var modal = bootstrap.Modal.getInstance(document.getElementById('modalCadastro'));
+  modal.hide();
+}
+
+// Login de usuário
+function fazerLogin() {
+  const nome = document.getElementById("nome-usuario").value.trim().toLowerCase();
+  const senha = document.getElementById("nome-senha").value.trim();
+
+  if (!nome || !senha) {
+    alert("Preencha nome e senha para login!");
+    return;
+  }
+
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
+
+  if (!usuarios[nome]) {
+    alert("Usuário não encontrado!");
+    return;
+  }
+
+  if (usuarios[nome].senha !== senha) {
+    alert("Senha incorreta!");
+    return;
+  }
+
+  localStorage.setItem("usuarioLogado", nome);
+  location.reload();
+}
+
+// Logout do usuário
+function fazerLogout() {
+  localStorage.removeItem("usuarioLogado");
+  location.reload();
+}
+
+function trocarUsuario() {
+  localStorage.removeItem("usuarioLogado");
+  document.getElementById("login-container").style.display = "block";
+  document.getElementById("app").style.display = "none"; // aqui é 'app'
+  document.getElementById("barra-usuario").style.display = "none"; // também é bom esconder a barra
+}
+
+// Verifica se o usuário está logado
+let usuarioLogado = localStorage.getItem("usuarioLogado");
+
+if (!usuarioLogado) {
+  document.getElementById("login-container").style.display = "block";
+  document.getElementById("app").style.display = "none";
+} else {
+  document.getElementById("login-container").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  document.getElementById("barra-usuario").style.display = "block";
+  document.getElementById("usuario-nome").textContent = usuarioLogado;
+}
+
+// Carrega as publicações do usuário logado
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
+let publicacoes = usuarios[usuarioLogado]?.publicacoes || [];
+let editandoIndex = null;
+
+// Formatar data e hora
+function formatarDataHora(data) {
+  const dia = String(data.getDate()).padStart(2, '0');
+  const mes = String(data.getMonth() + 1).padStart(2, '0');
+  const ano = data.getFullYear();
+  const hora = String(data.getHours()).padStart(2, '0');
+  const minutos = String(data.getMinutes()).padStart(2, '0');
+  return `${dia}/${mes}/${ano} ${hora}:${minutos}`;
+}
+
+// Atualizar contador de palavras/caracteres
+document.getElementById("conteudo").addEventListener("input", () => {
+  const texto = document.getElementById("conteudo").value;
+  const palavras = texto.trim().split(/\s+/).filter(Boolean).length;
+  const caracteres = texto.length;
+  document.getElementById("contador").textContent = `Palavras: ${palavras} | Caracteres: ${caracteres}`;
+});
+
+// Renderizar publicações
+function renderizarPublicacoes() {
+  const lista = document.getElementById("lista-publicacoes");
+  lista.innerHTML = "";
+
+  publicacoes.forEach((pub, index) => {
+    const card = document.createElement("div");
+    card.className = "card mb-3";
+
+    card.innerHTML = `
+      <div class="card-body">
+        <h5 class="card-title">${pub.titulo}</h5>
+        <p class="card-text">${pub.conteudo.replace(/\n/g, "<br>")}</p>
+        <p class="text-muted small">Autor: ${pub.autor}</p>
+        <p class="text-muted small">
+          Publicado em: ${pub.dataHoraCriacao}
+          ${pub.dataHoraEdicao ? `<br>Editado em: ${pub.dataHoraEdicao}` : ""}
+        </p>
+        <button class="btn btn-warning btn-sm me-2" onclick="editarPublicacao(${index})">Editar</button>
+        <button class="btn btn-danger btn-sm" onclick="excluirPublicacao(${index})">Excluir</button>
+      </div>
+    `;
+
+    lista.appendChild(card);
+  });
+}
+
+// Editar publicação
+function editarPublicacao(index) {
+  const pub = publicacoes[index];
+  document.getElementById("titulo").value = pub.titulo;
+  document.getElementById("conteudo").value = pub.conteudo;
+  editandoIndex = index;
+  document.getElementById("btn-publicar").textContent = "Salvar Alterações";
+}
+
+// Excluir publicação
+function excluirPublicacao(index) {
+  if (confirm("Tem certeza que deseja excluir esta publicação?")) {
+    publicacoes.splice(index, 1);
+    salvarPublicacoes();
+    renderizarPublicacoes();
+  }
+}
+
+// Salvar publicações no localStorage
+function salvarPublicacoes() {
+  usuarios[usuarioLogado].publicacoes = publicacoes;
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+
+// Formulário de publicação
+document.getElementById("form-publicar").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const titulo = document.getElementById("titulo").value;
+  const conteudo = document.getElementById("conteudo").value;
+  const agora = formatarDataHora(new Date());
+
+  if (editandoIndex === null) {
+    publicacoes.push({
+      titulo,
+      conteudo,
+      autor: usuarioLogado,
+      dataHoraCriacao: agora,
+      dataHoraEdicao: null
+    });
+  } else {
+    publicacoes[editandoIndex].titulo = titulo;
+    publicacoes[editandoIndex].conteudo = conteudo;
+    publicacoes[editandoIndex].dataHoraEdicao = agora;
+    editandoIndex = null;
+    document.getElementById("btn-publicar").textContent = "Publicar";
+  }
+
+  salvarPublicacoes();
+  renderizarPublicacoes();
+  document.getElementById("form-publicar").reset();
+  document.getElementById("contador").textContent = "";
+});
+
+// Iniciar renderização
+renderizarPublicacoes();
+</script>
+
+</body>
+</html>
